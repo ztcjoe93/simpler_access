@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="machines">
+	<xs:element name="machine" minOccurs="0">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="host" type="xs:string"/>
+				<xs:element name="port" type="xs:int"/>
+				<xs:element name="forward" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="localhost" type="xs:string"/>	
+							<xs:element name="localport" type="xs:int"/>	
+							<xs:element name="remotehost" type="xs:string"/>	
+							<xs:element name="remotehost" type="xs:int"/>	
+						</xs:sequence>
+						<xs:attribute name="type" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="username" type="xs:string"/>
+				<xs:element name="password" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="key" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="jumphosts">
+					<xs:element name="jumphost" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="name" type="xs:string"/>
+								<xs:element name="host" type="xs:string"/>
+								<xs:element name="port" type="xs:int"/>
+								<xs:element name="username" type="xs:string"/>
+								<xs:element name="password" type="xs:string" minOccurs="0" maxOccurs="1"/>
+								<xs:element name="key" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:element>
+
+</xs:schema>
